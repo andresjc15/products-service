@@ -1,0 +1,6 @@
+INSERT INTO products (name, description, price, create_at) VALUES('TV UHD 55" Samsung', 'TV Samsung', 2290.90, NOW())
+INSERT INTO products (name, description, price, create_at) VALUES('Iphone 12 128GB', 'Iphone 12', 3590.90, NOW())
+INSERT INTO products (name, description, price, create_at) VALUES('Monitor ASUS 27" FHD', 'Monitor ASUS', 890.90, NOW())
+INSERT INTO products (name, description, price, create_at) VALUES('Reebok 28', 'Reebok 28', 240.90, NOW())
+INSERT INTO products (name, description, price, create_at) VALUES('Lenovo 18" i5', 'Laptop', 2590.90, NOW())
+INSERT INTO products (name, description, price, create_at) VALUES('Watch Fit Sony', 'Watch', 590.90, NOW())
