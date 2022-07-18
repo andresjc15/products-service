@@ -1,6 +1,6 @@
 package com.ajcp.product.service;
 
-import com.ajcp.product.model.entity.Product;
+import com.ajcp.library.common.model.entity.Product;
 import com.ajcp.product.model.repository.ProductRepository;
 import com.ajcp.product.model.service.ProductService;
 import lombok.AllArgsConstructor;
@@ -29,4 +29,18 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product save(Product product) { return productRepository.save(product); }
+
+    @Override
+    public Product update(Long id, Product product) {
+        return productRepository.findById(id).map(p -> {
+            p.setName(product.getName());
+            return productRepository.save(p);
+        }).orElseGet(() -> {
+            return null;
+        });
+    }
+
+    @Override
+    public void deletedById(Long id) { productRepository.deleteById(id); }
+
 }

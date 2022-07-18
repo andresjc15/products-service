@@ -1,16 +1,22 @@
 
 spring:
   application:
-    name: products-service
+    name: product-service
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 #Declarar ip del servidor Eureka si esta en diferente maquina
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    status-page-url-path: /swagger-ui.html
 
 server:
-  port: 8001
+  port: ${PORT:0}
 
 path:
   products: /api/products
